@@ -79,3 +79,54 @@ function carregarBoletim() {
 
     let mediaFinal = null;
     let situacaoTexto = "Nota ainda não disponível";
+    let situacaoClasse = "situacao-indisponivel";
+
+    if (qtdNotas > 0) {
+      mediaFinal = somaNotas / qtdNotas;
+      somaMediasGerais += mediaFinal;
+      disciplinasComMedia++;
+
+      if (mediaFinal >= 6.0) {
+        situacaoTexto = "Bom desempenho";
+        situacaoClasse = "situacao-bom";
+        contBomDesempenho++;
+      } else {
+        situacaoTexto = "Atenção";
+        situacaoClasse = "situacao-atencao";
+        contAtencao++;
+      }
+    }
+
+    // Formatação dos textos das notas para a tabela
+    const txt1 = n1 !== null ? n1.toFixed(1).replace('.', ',') : "—";
+    const txt2 = n2 !== null ? n2.toFixed(1).replace('.', ',') : "—";
+    const txt3 = n3 !== null ? n3.toFixed(1).replace('.', ',') : "—";
+    const txtMedia = mediaFinal !== null ? mediaFinal.toFixed(1).replace('.', ',') : "—";
+
+    // Criação da linha na tabela via DOM
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td><strong>${item.disciplina}</strong></td>
+      <td>${txt1}</td>
+      <td>${txt2}</td>
+      <td>${txt3}</td>
+      <td><strong>${txtMedia}</strong></td>
+      <td>${totalFaltasMateria}</td>
+      <td class="${situacaoClasse}">${situacaoTexto}</td>
+    `;
+    corpoTabela.appendChild(tr);
+  });
+
+  // Atualização dos Cards de Resumo
+  const mediaGeralCalculada = disciplinasComMedia > 0 ? (somaMediasGerais / disciplinasComMedia).toFixed(1).replace('.', ',') : "—";
+  
+  document.getElementById("media-geral").innerText = mediaGeralCalculada;
+  document.getElementById("total-faltas").innerText = totalFaltasGeral;
+  document.getElementById("bom-desempenho").innerText = contBomDesempenho;
+  document.getElementById("precisa-atencao").innerText = contAtencao;
+
+  // NOTA: A frequência de 92% exibida no HTML é APENAS DEMONSTRATIVA/FICTÍCIA nesta versão e será tratada via cálculo dinâmico futuramente.
+}
+
+// Executa o carregamento assim que a página estiver pronta
+document.addEventListener("DOMContentLoaded", carregarBoletim);
