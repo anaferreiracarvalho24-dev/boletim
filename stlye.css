@@ -1,0 +1,123 @@
+/* Configurações gerais da página */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #0d1117; /* Fundo escuro minimalista */
+  color: #e6edf3; /* Texto em cinza claro */
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* Cabeçalho */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  color: #1f6feb; /* Azul escuro elétrico para o título principal */
+  font-size: 2.2rem;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: #8b949e; /* Cinza suave */
+  font-size: 1.1rem;
+}
+
+/* Grade dos Cards de Resumo */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+/* Estilo individual do Card */
+.card {
+  background-color: #161b22; /* Fundo do card */
+  border: 1px solid #30363d; /* Borda fina */
+  border-radius: 8px; /* Bordas arredondadas */
+  padding: 15px;
+  text-align: center;
+}
+
+.card h3 {
+  font-size: 0.85rem;
+  color: #8b949e;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-valor {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #58a6ff; /* Azul para destaque dos valores */
+}
+
+.card-subtexto {
+  font-size: 0.75rem;
+  color: #3fb950; /* Verde para indicação positiva */
+  display: block;
+  margin-top: 4px;
+}
+
+/* Tabela Responsiva */
+.tabela-container {
+  width: 100%;
+  overflow-x: auto; /* Permite rolagem horizontal em telas pequenas */
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+}
+
+.tabela-boletim {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  min-width: 600px; /* Evita que a tabela esmague em telas de celular */
+}
+
+.tabela-boletim th,
+.tabela-boletim td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #21262d;
+}
+
+.tabela-boletim th {
+  background-color: #0d1117;
+  color: #8b949e;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.tabela-boletim td {
+  font-size: 0.95rem;
+}
+
+/* Estilos de Situação */
+.situacao-bom {
+  color: #3fb950; /* Verde */
+  font-weight: 600;
+}
+
+.situacao-atencao {
+  color: #f85149; /* Vermelho/Laranja */
+  font-weight: 600;
+}
+
+.situacao-indisponivel {
+  color: #8b949e; /* Cinza */
+}
