@@ -10,14 +10,7 @@ body {
   background-color: #0d1117; /* Fundo escuro minimalista */
   color: #e6edf3; /* Texto em cinza claro */
   padding: 20px;
-  display: flex;￼
-￼
-￼
-
-￼
-Flash
-￼
-
+  display: flex;
   justify-content: center;
 }
 
@@ -41,6 +34,10 @@ Flash
 .subtitle {
   color: #8b949e; /* Cinza suave */
   font-size: 1.1rem;
+}
+
+.acoes-boletim {
+  margin-top: 15px;
 }
 
 /* Grade dos Cards de Resumo */
@@ -127,4 +124,150 @@ Flash
 
 .situacao-indisponivel {
   color: #8b949e; /* Cinza */
+}
+
+/* Tela de Login e Card de Edição */
+.card-login, .card-edicao {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 25px;
+  margin: 40px auto;
+  max-width: 450px;
+  text-align: center;
+}
+
+.card-edicao {
+  max-width: 100%;
+  margin: 30px 0;
+  text-align: left;
+}
+
+.form-group {
+  margin: 20px 0;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #8b949e;
+  font-size: 0.9rem;
+}
+
+input[type="password"],
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px 12px;
+  background-color: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  color: #e6edf3;
+  font-size: 1rem;
+  outline: none;
+}
+
+input[type="password"]:focus,
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: #1f6feb;
+}
+
+input.campo-invalido {
+  border-color: #f85149 !important;
+  background-color: rgba(248, 81, 73, 0.1);
+}
+
+button {
+  background-color: #238636;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #2ea043;
+}
+
+button.btn-secundario {
+  background-color: #21262d;
+  color: #c9d1d9;
+  border: 1px solid #30363d;
+  margin-left: 10px;
+}
+
+button.btn-secundario:hover {
+  background-color: #30363d;
+}
+
+#btn-alternar-edicao {
+  background-color: #1f6feb;
+}
+
+#btn-alternar-edicao:hover {
+  background-color: #388bfd;
+}
+
+.mensagem-status {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  min-height: 20px;
+}
+
+.subtitle-edicao {
+  color: #8b949e;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.grid-edicao {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.item-edicao-materia {
+  background-color: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 15px;
+}
+
+.item-edicao-materia h4 {
+  color: #58a6ff;
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.campos-notas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.campos-faltas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.campo-pequeno label {
+  font-size: 0.75rem;
+  color: #8b949e;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.edicao-botoes {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
 }
